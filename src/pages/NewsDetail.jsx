@@ -37,11 +37,11 @@ const NewsDetail = () => {
   };
 
   return (
-    <div className="flex h-screen bg-black text-white">
+    <div className="flex flex-col lg:flex-row h-screen bg-black text-white overflow-x-hidden">
       <Sidebar />
       
-      <main className="flex-1 overflow-y-auto">
-        <div className="relative h-[400px] w-full">
+      <main className="flex-1 overflow-y-auto overflow-x-hidden pt-16 lg:pt-0">
+        <div className="relative h-[300px] md:h-[400px] w-full">
           <img 
             src={news.image} 
             alt={news.title}
@@ -51,17 +51,17 @@ const NewsDetail = () => {
           
           <button 
             onClick={() => navigate('/news')}
-            className="absolute top-8 left-8 p-3 bg-black/50 backdrop-blur-md rounded-full border border-white/10 hover:bg-white/10 transition-all group"
+            className="absolute top-4 left-4 md:top-8 md:left-8 p-3 bg-black/50 backdrop-blur-md rounded-full border border-white/10 hover:bg-white/10 transition-all group z-20"
           >
             <ArrowLeft className="group-hover:-translate-x-1 transition-transform" />
           </button>
         </div>
 
-        <div className="max-w-4xl mx-auto px-8 -mt-20 relative z-10 pb-20">
+        <div className="max-w-4xl mx-auto px-4 md:px-8 -mt-20 relative z-10 pb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-black/80 backdrop-blur-xl border border-white/10 p-8 rounded-3xl"
+            className="bg-black/80 backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-3xl"
           >
             <div className="flex items-center gap-4 mb-6">
               <span className={`px-3 py-1 rounded text-xs font-bold uppercase tracking-wider bg-blue-500/20 text-blue-400 border border-blue-500/30`}>
